@@ -7,10 +7,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>OS Mastery Progress Dashboard</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="css/dashboard.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">iOS Mastery: Level 1 - Module 1</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Leaderboard</a>
+                    </li>
+                    <li><a href="#">Settings</a>
+                    </li>
+                    <li><a href="#">Help</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- Scoring panel -->
+            <div class="col-sm-3 col-md-2 sidebar hidden">
+                <div class="panel panel-primary" data-bind="with: currentAgent" id="edit-pane">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" data-bind="text: name"></h3>
+                    </div>
+                    <div class="panel-body">
+                        <h5>Topic 1</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item">Scenario 1</li>
+                            <li class="list-group-item">Scenario 2</li>
+                            <li class="list-group-item">Scenario 3</li>
+                        </ul>
+                        <h5>Topic 2</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item">Scenario 1</li>
+                            <li class="list-group-item">Scenario 2</li>
+                            <li class="list-group-item">Scenario 3</li>
+                        </ul>
+                        <h5>Topic 3</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item">Scenario 1</li>
+                            <li class="list-group-item">Scenario 2</li>
+                            <li class="list-group-item">Scenario 3</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+                <!-- Leaderboard -->
+                <h1 class="page-header">Progress Tracker</h1>
+
+                <div class="table-responsive">
+
+                <!-- Input field for adding new agents -->
+                <form class="col-md-offset-9 col-md-3">
+                    <div class="form-group input-group">
+                        <input type="text" class="form-control" placeholder="Name" data-bind="value: input">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-plus" data-bind="click: addAgent"></span></span>
+                    </div>
+                </form>
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Agent Name</th>
+                                <th>1</th>
+                                <th>2</th>
+                                <th>3</th>
+                                <th>4</th>
+                                <th>5</th>
+                                <th>6</th>
+                                <th>7</th>
+                                <th>8</th>
+                                <th>9</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: agents">
+                            <tr>
+                                <td data-bind="text: name"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td>
+                                    <a href="#" data-bind="click: $root.editAgent"><span class="glyphicon glyphicon-pencil"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" data-bind="click: $root.removeAgent"><span class="glyphicon glyphicon-remove"></span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
